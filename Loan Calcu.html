@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+<title>JavaScript Loan Calculator</title>
+<style>
+.output {font-weight: bold;}
+#payment {text-decoration: underline;}
+#graph {border: solid black 1px;}
+th,td {vertical-align: top;}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background-color: #a9a9a9;
+}
+
+body {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Sonsie One', cursive;
+  color: #2a2a2a;
+}
+
+p, input, li {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #2a2a2a;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || header layout */
+
+nav, article, aside, footer {
+  background-color: white;
+  padding: 1%;
+}
+
+nav {
+  height: 50px;
+  background-color: #ff80ff;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+nav form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+input[type="search"] {
+  flex: 3;
+}
+
+input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+  background-color: gray
+}
+
+article {
+  flex: 4;
+}
+
+aside {
+  flex: 1;
+  margin-left: 10px;
+  background-color: #ff80ff;
+}
+
+aside li {
+  padding-bottom: 10px;
+}
+
+footer {
+  margin-top: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+	<header><h1>冯远聪</h1></header>
+	<nav>
+		<ul>
+		<li>home</li>
+		<li>Product</li>
+		<li>About</li>
+		</ul>
+		<form>
+			<input type = "search" name = "q" placeholder="search for..." >
+			<input type = "submit" value = "go">
+		</form>
+		
+	</nav>
+	<main>
+		<table>
+		<tr>
+			<th>Enter Loan Data</th>
+			<td></td>
+			<th>Loan Balance,Cumulative Equity,and Interst Payments</th>
+		</tr>
+		<tr>
+			<td>Amount of the Loan ($):</td>
+			<td><input id = "amount" onchange = "calculate();"></td>
+			<td rowspan = 8>
+				<canvas id = "graph" width="400" height = "250"></canvas>
+			</td>
+		</tr>
+		<tr>
+			<td>Annual Interest (%):</td>
+			<td><input id = "apr" onchange = "calculate();" ></td>
+		</tr>
+		<tr>
+			<td>Repayment period (years):</td>
+			<td><input id ="years" onchange = "calculate();"></td>
+		</tr>
+		<tr>
+			<td>Zipcode (to find lenders) :</td>
+			<td><input id = "zipcode" onchange = "calculate();"></td>
+		</tr>
+		<tr>
+			<th>Approximate Payments:</th>
+			<td><button onclick = "calculate();">Calculate</button></td>
+		</tr>
+		<tr>
+			<td>Monthly payments:</td>
+			<td>$<span class="output" id = "payment"></span></td>
+		</tr>
+		<tr>
+			<td>Total payment:</td>
+			<td>$<span class = "output" id="total"></span></td>
+		</tr>
+		<tr>
+			<td>Total Interest:</td>
+			<td>$<span class = "output" id="totalinterest"></span></td>
+		</tr>
+		<tr>
+			<th>Sponsors:</th>
+			<td colspan = 2>
+				Apply for your loan with one of these fine lenders:
+				<div id="lenders"></div>
+			</td>
+		</tr>
+		</table>
+		<aside>
+			<h2>Unrelated</h2>
+			<ul>
+				<li><a href = "https://www.apple.com/cn/">Apple</a></li>
+				<li><a href = "https://www.t.tt">Smartisan</a></li>
+				<li><a href = "https://www.mi.com">Mi</a></li>
+			</ul>
+		</aside>
+	</main>    
+<footer>
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>    
+</footer>
+<script>
+"use strict";
+
+function calculate () {
+	var amount = document.getElementById('amount');
+	var apr = document.getElementById('apr');
+	var years = document.getElementById('years');
+	var zipcode = document.getElementById('zipcode');
+	var payment = document.getElementById('payment');
+	var total = document.getElementById('total');
+	var totalinterest = document.getElementById('totalinterest');
+
+	var principal = parseFloat(amount.value);
+	var interest = parseFloat(apr.value)/100/12;
+	var payments = parseFloat(years.value)*12;
+
+	var x =Math.pow(1 +interest,payments);
+	var monthly = (principal*x*interest)/(x-1);
+
+	if (isFinite(monthly)) {
+		payment.innerHTML = monthly.toFixed(2) ;
+		total.innerHTML = (monthly*payments).toFixed(2);
+		totalinterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
+
+		save (amount.value,apr.value,years.value,zipcode.value);
+
+		try{
+			getLenders(amount.value,apr.value,years.value,zipcode.value);
+		}catch(e){
+			chart(principal,interest,monthly,payments);
+		}
+
+	}else{
+		payment.innerHTML = "";
+		total.innerHTML = "";
+		totalinterest.innerHTML = "";
+		chart();
+	}
+}
+
+function save (amount,apr,years,zipcode) {
+	if (window,localStorage) {
+		localStorage.loan_amount = amount;
+		localStorage.loan_apr = apr;
+		localStorage.loan_years = years;
+		localStorage.loan_zipcode = zipcode;
+	}
+}
+
+window.onload = function(){
+	if (window.localStorage && localStorage.loan_amount) {
+		document.getElementById("amount").value = localStorage.loan_amount;
+		document.getElementById("apr").value = localStorage.loan_apr;
+		document.getElementById("years").value = localStorage.loan_years;
+		document.getElementById("zipcode").value = localStorage.loan_zipcode;
+	};
+}
+
+function getLenders (amount,apr,years,zipcode) {
+	if (!window.XMLHttpReuqest) return ;
+
+	var ad = document.getElementById("lenders");
+	if(!ad) return;
+
+	var url = "getLenders.php" +
+				"?amt="+ encodeURICoponent(amount)+
+				"?apr"+encodeURICoponent(apr)+
+				"?yrs"+encodeURICoponent(years)+
+				"?zip"+encodeURICoponent(zipcode);
+	var req = new XMLHttpReuqest();
+	req.open("GET",url);
+	req.send(null);
+
+	req.onreadystatechange = function(){
+		if (req.readyState == 4 && req.status == 200) {
+			var response = req.responseText;
+			var lenders = JSON.parse(response);
+
+			var list = "";
+			for (var i = 0; i < lenders.length; i++) {
+				list += "<li><a href = '"+ lenders[i].url+"'>"+lenders[i].name+"</a>";
+			}
+			ad.innerHTML = "<ul>" + list +"</ul>";
+		}
+	}
+}
+
+function chart (principal,interest,monthly,payments) {
+	var graph = document.getElementById("graph");
+	graph.width = graph.width;
+
+	if (arguments.length == 0 || !graph.getContext) return;
+
+	var g = graph.getContext("2d");
+	var width = graph.width,
+	height = graph.height;
+
+	function paymentToX(n){
+		return n*width/payments;
+	}
+	function amountToY(a){
+		return height - (a*height/(monthly*payments*1.05));
+	}
+	
+	g.moveTo(paymentToX(0),amountToY(0));
+	g.lineTo(paymentToX(payments),amountToY(monthly*payments));
+	g.lineTo(paymentToX(payments,amountToY(0)));
+	g.closePath();
+	g.fillStyle = "#f88";
+	g.fill();
+	g.font = "bold 12px sans-serif";
+	g.fillText("Total Interest Payments",20,20);
+
+	var equity = 0;
+	g.beginPath();
+	g.moveTo(paymentToX(0),amountToY(0));
+	for (var p = 1; p <= payments; p++) {
+		var thisMonthsInterest = (principal-equity)*interest;
+		equity += (monthly - thisMonthsInterest);
+		g.lineTo(paymentToX(p),amountToY(equity));
+	}
+	g.lineTo(paymentToX(payments),amountToY(0));
+	g.closePath();
+	g.fillStyle = "green";
+	g.fillText = ("Total Equity",20,35);
+
+	var bal = principal;
+	g.beginPath();
+	g.moveTo(paymentToX(0),amountToY(bal));
+	for (var p = 1; p <= payments; p++) {
+		var thisMonthsInterest = bal*interest;
+		bal -= (monthly - thisMonthsInterest);
+		g.lineTo(paymentToX(p),amountToY(bal));
+	}
+	g.lineWidth = 3;
+	g.stroke();
+	g.fillStyle = "black";
+	g.fillText("Loan Balance",20,50);
+
+	g.textAlign = "center";
+	var y = amountToY(0);
+	for (var year = 1; year*12 <= payments; year++) {
+		var x = paymentToX(year*12);
+		g.fillRect(x-0.5,y-3,1,3);
+		if(year == 1)g.fillText("Year",x,y-5);
+		if(year%5 == 0 && year*12 !== payments)
+			g.fillText(String(year),x,y-5);
+	}
+
+	g.textAlign = "right";
+	g.textBaseline = "middle";
+	var ticks = [monthly*payments.principal];
+	var rightEdge = paymentToX(payments);
+	for (var i = 0; i < ticks.length; i++) {
+		var y = amountToY(ticks[i]);
+		g.fillRect(rightEdge-3,y-0.5,3,1);
+		g.fillText(String(ticks[i].toFixed(0)),rightEdge-5,y);
+	}
+}
+</script>
+
+
+</body>
+</html>
+
