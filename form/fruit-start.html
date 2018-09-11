@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -40,33 +40,52 @@
     </form>
     <hr>
     <form>
-      <select name="myFruit">
-        <option>Cherry</option>
-        <option>Lemon</option>
-        <option>Banana</option>
-        <option>Strawberry</option>
-        <option>Apple</option>
-      </select>
+        <select name="myFruit">
+            <option>Cherry</option>
+            <option>Lemon</option>
+            <option>Banana</option>
+            <option>Strawberry</option>
+            <option>Apple</option>
+        </select>
 
-      <div class="select" tabindex="0">
-        <span class="value">Cherry</span>
-        <ul class="optList hidden">
-          <li class="option">Cherry</li>
-          <li class="option">Lemon</li>
-          <li class="option">Banana</li>
-          <li class="option">Strawberry</li>
-          <li class="option">Apple</li>
-        </ul>
-      </div>
-      <input type="search" placeholder=" search">
-      <input type="text" placeholder=" input">
-      <textarea placeholder="textarea"></textarea>
-      <button>Fuck</button>
-      <fieldset>
-        <legend>Hi!</legend>
-        <h1>Hello</h1>
-      </fieldset>
+        <div class="select" tabindex="0">
+            <span class="value">Cherry</span>
+            <ul class="optList hidden">
+                <li class="option">Cherry</li>
+                <li class="option">Lemon</li>
+                <li class="option">Banana</li>
+                <li class="option">Strawberry</li>
+                <li class="option">Apple</li>
+            </ul>
+        </div>
+        <input type="search" placeholder=" search">
+        <input type="text" placeholder=" input">
+        <span><input type="checkbox"></span>
+        <textarea placeholder="textarea"></textarea>
+        <button>Fuck</button>
+        <fieldset>
+            <legend>Hi!</legend>
+            <h1>Hello</h1>
+        </fieldset>
     </form>
+    <form class="advanced">
+        <fieldset class="advanced-field">
+            <p class="advanced-p">
+                <input type="checkbox" id="first" name="fruit-1" value="cherry">
+                <label for="first" class="advanced-label">I like cherry</label>
+            </p>
+            <p>
+                <input type="checkbox" id="second" name="fruit-2" value="banana">
+                <label for="second">I can't like banana</label>
+            </p>
+            <p>
+                <input type="checkbox" id="third" name="fruit-3" value="strawberry">
+                <label for="third">I like strawberry</label>
+            </p>
+        </fieldset>
+    </form>
+      
+    
     <script src="fruit-start.js">
       /*window.addEventListener("load",function () {
         document.body.classList.remove("no-widget");

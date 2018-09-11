@@ -6,8 +6,12 @@ input:valid {
 }
 input[type=search]{
   border: 1px dotted #999;
-  border-radius: 15px;
+  border-radius: 0;
   -webkit-appearance:none;
+}
+input[type=checkbox] {
+    width:100px;
+    height:100px;
 }
 input,textarea,button{
   width: 150px;
@@ -17,7 +21,13 @@ input,textarea,button{
    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
         box-sizing: border-box;
 }
-
+span {
+    display:inline-block;
+    background:red;    
+}
+span[class=value] {
+        background:inherit;
+    }
 legend {
   width: 1px;
   height: 1px;
@@ -106,4 +116,15 @@ legend {
   left: -5000em;
   height: 0;
   overflow: hidden;
+}
+
+body {
+    font:1em sans-serif;
+}
+.advanced {
+    display:inline-block;
+    padding:0;
+    margin:0;
+    border:1px solid #ccc;
+
 }
