@@ -1,0 +1,39 @@
+h1{
+    color:blue;
+    border:1px solid black;
+    background:yellow;
+}
+p{
+    text-transform: uppercase;
+    padding: 5px;
+}
+li{
+    text-decoration:underline;
+    margin:2px;
+}
+.classSele{
+    font-weight:bold;
+    background-color:aquamarine;
+    border-left:6px solid aqua;
+    text-decoration:none;
+}
+#idSele{
+    background-color: #ff9999;
+    border-left: 6px solid #993333;
+    text-decoration:none;
+}
+p {
+
+}
+
+ #first{
+  background-color: goldenrod;
+}
+
+#second {
+  background-color: silver;
+}
+
+ #third{
+  background-color: #CD7F32;
+}
