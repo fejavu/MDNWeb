@@ -1,3 +1,6 @@
+html{
+    font-family:Arial, Helvetica, sans-serif;
+}
 h1{
     color:blue;
     border:1px solid black;
@@ -5,7 +8,11 @@ h1{
 }
 p{
     text-transform: uppercase;
-    padding: 5px;
+    padding: 10px;
+}
+p:hover{
+    background:gray;
+    color:white;
 }
 li{
     text-decoration:underline;
@@ -26,21 +33,17 @@ li:focus{
     border-left: 6px solid #993333;
     text-decoration:none;
 }
-p {
 
-}
-
- #first{
+#first{
   background-color: goldenrod;
 }
-
 #second {
   background-color: silver;
 }
-
- #third{
+#third{
   background-color: #CD7F32;
 }
+
 .Pseudo{
     padding:0;
 }
@@ -80,4 +83,20 @@ ul li:hover {
   float: left;
   padding: 2px;
   margin-right: 4px;
+}
+.cas {
+    background:gray;
+    border:1px solid darkgray;
+    text-transform:capitalize;
+}
+.cas:hover{
+    background:darkgray;
+    color:black;
+}
+#casId{
+    color:white;
+    background:darkgray;
+}
+#casId:hover{
+    background:gray;
 }
