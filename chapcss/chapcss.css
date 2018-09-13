@@ -100,3 +100,21 @@ ul li:hover {
 #casId:hover{
     background:gray;
 }
+#wrapper * {
+    margin:0;
+    padding:20px;
+    font-size:20px;
+    border:20px solid rgba(0,0,0,0.5);
+}
+#wrapper header,#wrapper footer {
+    background-color:blue;
+    color:white;
+}
+#wrapper main{
+    margin:5%;
+    padding:5%;
+    width:60%;
+    background-color:yellow;
+    color:black;
+    border:30px double red;
+}
