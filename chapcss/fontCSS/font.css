@@ -20,11 +20,9 @@ ol{
     list-style-position:inside;
 }
 ul{
-    padding-left:2rem;
     list-style-type:square;
 }
 ul li{
-    padding-left:2rem;
     background-position:0 0;
     background-size:1.6rem 1.6rem;
     background-repeat:no-repeat;
@@ -44,5 +42,31 @@ dd{
 #click {
     letter-spacing:.03rem;
 }
-
-
+nav ul {
+    padding:0;
+    width:100%;
+}
+nav ul li {
+    display:inline;
+}
+nav a{
+    outline:none;
+    text-decoration:none;
+    display:inline-block;
+    width:19%;
+    margin-right:0.6%;
+    text-align:center;
+    line-height:3;
+    color:white;
+    border-radius:3px;
+}
+nav a:link,nav a:visited,nav a:focus {
+    background-color:darkgrey;
+}
+nav a:hover {
+    background-color:grey;
+    border-color:black ;
+}
+nav a:active {
+    background-color:dimgrey;
+}
