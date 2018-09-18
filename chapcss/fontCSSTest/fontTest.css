@@ -57,25 +57,30 @@ h1{
   letter-spacing: 0.05rem;
 }
 nav ul {
-  border-right: 1px #a66 solid;
-  padding: none;
+  border-right: .1px #a66 solid;
+  padding: 0 2rem ;
   width: 100%;
 }
 nav ul li {
+  margin-top: 2rem;
   display: block;
-  margin-top: 30px
+  text-align: center;
+  padding: .8rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+  border-radius: 2rem;
+  background-color: lightgrey;/*#FFFFB0*/
+}
+nav ul li:hover {
+  background-color: #0C0C0C;
 }
 nav ul a {
-  text-align: center;
   text-decoration: none;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 1.6rem;
-  background-color: lightgrey;/*#FFFFB0*/
 }
 nav ul a:hover {
   background-color: #0C0C0C;
   font-weight: bolder;
+  font-size: 1.7rem;
 }
 section p {
   text-indent:20px; 
@@ -100,7 +105,11 @@ a:focus {
 a:hover {
   color: #a66;
   background-color: lightgrey;
+  border-radius: .1rem;
   text-decoration: none;
+  padding: .1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 a:active {
   background-color: darkgrey;
