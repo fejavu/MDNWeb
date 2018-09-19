@@ -12,6 +12,7 @@ h1 {
 h2{
     font-size:2.6rem;
 }
+
 ul,ol,dl,p{
     font-size:1.5rem;
 }
@@ -30,6 +31,7 @@ ul li{
 li, p {
     line-height:1.5;
 }
+
 dd,dt{
     line-height:1.5;
 }
@@ -42,6 +44,7 @@ dd{
 #click {
     letter-spacing:.03rem;
 }
+
 nav ul {
     padding:0;
     width:100%;
