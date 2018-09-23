@@ -125,5 +125,7 @@ ul li:hover {
     background-image: url(https://mdn.mozillademos.org/files/13026/fire-ball-icon.png);
     background-repeat: no-repeat;
     background-position: 99% center;
-    background-image: repeating-linear-gradient(to bottom, yellow, #dddd00 50%, orange)
+    background-image: repeating-linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+    border-radius: 9px;
+    border-style: solid;
 }
