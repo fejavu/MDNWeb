@@ -17,16 +17,16 @@
 body{
 	font: 21px sans-serif;
 	padding: 2em;
-	background: #222;
+	background: gray;
 }
 
 form{
 	position: relative;
-
 	width: 740px;
 	height: 498px;
 	margin: 0 auto;
 	background: #FFF url(background.jpg);
+	box-shadow: 0px 0px 28px rgba(0,0,0,1);
 }
 
 h1{
