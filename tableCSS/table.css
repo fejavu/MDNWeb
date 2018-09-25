@@ -76,10 +76,10 @@ table {
 }
 caption{
   font-family: 'Rock Salt',cursive;
-   padding: 20px;
-   font-style: italic;
-   caption-side: bottom;
-   color:#666;
-   text-align: right;
-   letter-spacing: 1px;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color:#666;
+  text-align: right;
+  letter-spacing: 1px;
 }
