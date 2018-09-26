@@ -64,7 +64,7 @@ html {
   color: white;
 }
 .tiktok{
-  margin-left: 100px;
+  margin-left: 400px;
   font-family: sans-serif;
   font-weight: bold;
   width: 200px;
@@ -72,24 +72,46 @@ html {
   padding-top:9px; 
   text-align: center;
   font-size: 18px;
-  font-color:white;
+  color:white;
   background-color: red;
   border-radius: 8px;
   background-image: linear-gradient(to bottom right,red,blue);
   box-shadow: 0px 3px 20px blue;
 }
 .tiktok:hover{
-    margin-left: 100px;
+  margin-left: 400px;
   font-family: sans-serif;
   font-weight: bold;
-  width: 199px;
-  height: 35px;
+  width: 200px;
+  height: 36px;
   padding-top:9px; 
   text-align: center;
   font-size: 17px;
-  font-color:white;
+  color:white;
   background-color: red;
-  border-radius: 9px;
+  border-radius: 8px;
   background-image: linear-gradient(to bottom right,blue,red);
   box-shadow: 0px 3px 15px blue;
 }
+
+.tiktokBox{
+  margin:100px  400px;
+  width: 320px;
+  height: 180px;
+  padding-top:9px; 
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom right,#00f7ef,#fe2c55);
+  box-shadow: 0px 3px 20px #fe2c55;
+}
+
+.weseeBox{
+  position: relative;
+  margin:100px  400px;
+  width: 320px;
+  height: 180px;
+  padding-top:9px; 
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom right,blue,red);
+  box-shadow: 0px 3px 20px blue;
+}
+
