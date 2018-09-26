@@ -65,12 +65,12 @@ html {
 }
 .tiktok{
   margin: 50px auto;
-  font-family: sans-serif;
-  font-weight: bold;
+  padding-top:9px; 
   width: 200px;
   height: 36px;
-  padding-top:9px; 
   text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
   font-size: 18px;
   color:white;
   background-color: red;
