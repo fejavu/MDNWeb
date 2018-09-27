@@ -10,10 +10,18 @@ body{
 	margin: 0;
 }
 
+.fake-content {
+	background-color: #a60000;
+	color: white;
+	padding: 10px;
+	height: 1000px;
+	margin-left: 470px;
+}
 .info-box{
 	width: 450px;
 	height: 400px;
-	margin: 0 auto;
+	position: fixed;
+	top: 0;
 }
 .info-box ul {
 	padding-left: 0;
