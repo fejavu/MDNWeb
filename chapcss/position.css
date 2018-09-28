@@ -10,60 +10,23 @@ body{
 	margin: 0;
 }
 
-.fake-content {
-	background-color: #a60000;
-	color: white;
-	padding: 10px;
-	height: 1000px;
-	margin-left: 470px;
-}
-.info-box{
-	width: 450px;
-	height: 400px;
-	position: fixed;
-	top: 0;
-}
-.info-box ul {
-	padding-left: 0;
-	margin-top: 0;
-}
-.info-box li {
-	list-style-type: none;
-	float: left;
-	width: 150px;
-}
-.info-box li a {
-	display: inline-block;
-	text-decoration: none;
-	width: 100%;
-	line-height: 3;
-	background-color: red;
-	color: red;
+.playerButton {
+	margin: 20px 100px;
+	font-family: 'helvetica neue',helvetica,sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 	text-align: center;
-	text-shadow:1px 1px 1px black;
+	border:2px solid rgba(0,0,200,0.6);
+	color: rgba(0,0,200,0.6);
+	background-color: rgba(0,0,200,0.3);
+	box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+	border-radius: 10px;
+	padding: 3px 10px;
+	display: inline-block;
+	cursor: pointer;
 }
-.info-box li a:focus, .info-box li a:hover {
-	background-color: #8E354A;
-	color: white;
-}
-.info-box li a:active{
-	background-color: #64363C;
-	color: white;
-}
-.info-box .panels {
-	height: 352px;
-	position: relative;
-	clear: both;
-}
-.info-box article {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 352px;
-	padding: 10px;
-	color: white;
-	background-color: red;
-}
-.info-box .active-panel{
-	z-index: 1;
+.playerButton:hover {
+	border:2px solid rgba(0,0,200,1);
+	color: rgba(0,0,200,1);
+	background-color: rgba(0,0,200,0.4);
 }
