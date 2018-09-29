@@ -2,12 +2,16 @@ html{
 	font-family: sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+body{
+	width: 50%;
+	max-width: 800px;
+	min-width: 400px;
+	margin: 0 auto;
 }
 
-body{
-	margin: 0;
+.lastResult {
+	color: white;
+	padding: 3px;
 }
 
 .playerButton {
