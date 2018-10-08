@@ -4,9 +4,14 @@
   <meta charset="utf-8">
   <title>Function library example</title>
   <style>
+
     input {
       font-size: 2em;
       margin: 10px 1px 0;
+    }
+
+    button{
+      margin: 10px;
     }
   </style>
 </head>
@@ -14,10 +19,23 @@
 
   <input class="numberInput" type="text">
   <p></p>
+  <button>Change Colour</button>
   
   <script>
     var input = document.querySelector('.numberInput');
     var para = document.querySelector('p');
+    var btn = document.querySelector('button');
+
+    function random (num) {
+      return Math.floor(Math.random()*num);
+    }
+
+    function bgChange () {
+      var rndCol = 'rgb('+random(255)+','+random(255)+','+random(255)+')';
+      document.body.style.backgroundColor = rndCol;
+    }
+
+    btn.addEventListener('click',bgChange);
 
     function squared (num) {
       return num*num;
