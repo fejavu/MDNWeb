@@ -174,7 +174,7 @@ function loop () {
 	ctx.fillStyle = 'rgba(0,0,0,0.25)';
 	ctx.fillRect(0,0,width,height);
 
-	while(balls.length < 5){
+	while(balls.length < 15){
 		var ball = new Ball(
 			random(0,width),
 			random(0,height),
