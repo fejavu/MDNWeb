@@ -7,8 +7,12 @@
       li {
         margin-bottom: 10px;
       }
+      li span{
+          font-size: 20px;
+      }
+
       li button {
-        font-size: 8px;
+        font-size: 15px;
         margin-left: 20px;
         color: #666;
       }
@@ -24,12 +28,11 @@
       <button>Add item</button>
     </div>
 
-    <ul>
-
-    </ul>
+    <ol>
+    </ol>
 
     <script>
-        var  uList = document.querySelector('ul');
+        var  uList = document.querySelector('ol');
         var  input = document.querySelector('input');
         var btn = document.querySelector('button');
 
@@ -45,6 +48,7 @@
             newList.appendChild(newBtn);
             newSpan.textContent = inputValue;
             newBtn.textContent = 'Delete';
+            newBtn.style.color = 'crimson';
             uList.appendChild(newList);
 
             newBtn.onclick = function(){
@@ -52,9 +56,7 @@
             }
 
             input.focus();
-
         }
-        ;
     </script>
   </body>
 </html>
